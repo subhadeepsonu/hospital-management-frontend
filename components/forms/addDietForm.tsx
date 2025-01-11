@@ -126,7 +126,7 @@ export default function AddDeitFormPlan(props: {
                                     </SelectTrigger>
                                     <SelectContent>
                                         {QueryPantry.data ? QueryPantry.data.message.map((pantry: any) => {
-                                            return <SelectItem value={pantry.id}>{pantry.name}</SelectItem>
+                                            return <SelectItem key={pantry.id} value={pantry.id}>{pantry.name}</SelectItem>
                                         }) : null}
                                     </SelectContent>
                                 </Select>
@@ -150,7 +150,7 @@ export default function AddDeitFormPlan(props: {
                                     </SelectTrigger>
                                     <SelectContent>
                                         {QueryDelivary.data ? QueryDelivary.data.data.map((delivary: any) => {
-                                            return <SelectItem value={delivary.id}>{delivary.name}</SelectItem>
+                                            return <SelectItem key={delivary.id} value={delivary.id}>{delivary.name}</SelectItem>
                                         }) : null}
                                     </SelectContent>
                                 </Select>

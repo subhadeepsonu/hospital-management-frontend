@@ -25,7 +25,7 @@ export default function Page() {
         <div className="min-h-screen w-full  flex justify-start pt-20 items-start px-4">
             <div className="w-full grid  grid-cols-4 gap-4">
                 {QueryTasks.data.data.map((pantry: any) => {
-                    return <PantryDietCard Ingredients={pantry.ingredients} Instruction={pantry.instructions} delivary={pantry.delivary.name} id={pantry.id} pantry={pantry.pantry.name} status={pantry.status} time={pantry.mealType} />
+                    return <PantryDietCard key={pantry.id} Ingredients={pantry.ingredients} Instruction={pantry.instructions} delivary={pantry.delivary.name} id={pantry.id} pantry={pantry.pantry.name} status={pantry.status} time={pantry.mealType} />
                 })}
             </div>
         </div>

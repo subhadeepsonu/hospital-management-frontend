@@ -14,7 +14,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import axios from "axios"
 import { useForm } from "react-hook-form"
-import zod, { z } from "zod"
+import zod from "zod"
 export default function AddPatientForm() {
     const formSchema = zod.object({
         name: zod.string(),
@@ -165,7 +165,7 @@ export default function AddPatientForm() {
                 <FormField
                     control={form.control}
                     name="floorNumber"
-                    render={({ field }) => (
+                    render={() => (
                         <FormItem>
                             <FormLabel>floorNumber</FormLabel>
                             <FormControl>
@@ -181,7 +181,7 @@ export default function AddPatientForm() {
                 <FormField
                     control={form.control}
                     name="roomNumber"
-                    render={({ field }) => (
+                    render={() => (
                         <FormItem>
                             <FormLabel>roomNumber</FormLabel>
                             <FormControl>
@@ -196,7 +196,7 @@ export default function AddPatientForm() {
                 <FormField
                     control={form.control}
                     name="bedNumber"
-                    render={({ field }) => (
+                    render={() => (
                         <FormItem>
                             <FormLabel>bedNumber</FormLabel>
                             <FormControl>

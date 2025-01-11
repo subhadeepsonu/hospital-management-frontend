@@ -41,7 +41,7 @@ export default function Page() {
             </Sheet>
             <div className="grid grid-cols-4 gap-4 w-full h-full px-4">
                 {QueryPantry.data.message.map((pantry: any) => {
-                    return <PantryCard contact={pantry.contactInfo} name={pantry.name} />
+                    return <PantryCard key={pantry.id} contact={pantry.contactInfo} name={pantry.name} />
                 })}
             </div>
 
