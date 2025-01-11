@@ -22,7 +22,7 @@ export default function Page() {
     }
     return (
         <div className="h-screen w-full  flex justify-start items-start pt-20 px-4">
-            <div className="grid grid-cols-4 gap-4 w-full">
+            <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 gap-4">
                 {queryDelivary.data.data.map((delivary: {
                     id: number;
                     mealType: string;

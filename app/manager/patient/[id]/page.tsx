@@ -52,7 +52,7 @@ export default function Page(params: {
         </div>
 
         <h1 className="text-2xl font-bold">Diet Plan</h1>
-        <div className="w-full grid grid-cols-4 gap-4">
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 gap-4">
             {QueryPatient.data.data.dietCharts.map((diet: {
                 mealType: string;
                 ingredients: string;

@@ -39,7 +39,7 @@ export default function Page() {
                     <AddpantryWorker role="pantry" />
                 </SheetContent>
             </Sheet>
-            <div className="grid grid-cols-4 gap-4 w-full h-full px-4">
+            <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 gap-4">
                 {QueryPantry.data.message.map((pantry: {
                     contactInfo: string;
                     name: string;

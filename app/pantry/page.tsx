@@ -23,7 +23,7 @@ export default function Page() {
     }
     return (
         <div className="min-h-screen w-full  flex justify-start pt-20 items-start px-4">
-            <div className="w-full grid  grid-cols-4 gap-4">
+            <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 gap-4">
                 {QueryTasks.data.data.map((pantry: {
                     ingredients: string;
                     instructions: string;
