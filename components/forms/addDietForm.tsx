@@ -28,6 +28,11 @@ import { Button } from "../ui/button"
 export default function AddDeitFormPlan(props: {
     id: number
 }) {
+    enum MealType {
+        BREAKFAST = "BREAKFAST",
+        LUNCH = "LUNCH",
+        DINNER = "DINNER"
+    }
     const formSchema = zod.object({
         mealType: zod.enum(["BREAKFAST", "LUNCH", "DINNER"]),
         ingredients: zod.string(),
@@ -93,7 +98,7 @@ export default function AddDeitFormPlan(props: {
                         <FormItem>
                             <FormLabel>MealType</FormLabel>
                             <FormControl>
-                                <Select onValueChange={(e: any) => {
+                                <Select onValueChange={(e: MealType) => {
                                     form.setValue('mealType', e)
                                 }} >
                                     <SelectTrigger className="w-[180px]">
@@ -125,7 +130,10 @@ export default function AddDeitFormPlan(props: {
                                         <SelectValue placeholder="select Pantry" />
                                     </SelectTrigger>
                                     <SelectContent>
-                                        {QueryPantry.data ? QueryPantry.data.message.map((pantry: any) => {
+                                        {QueryPantry.data ? QueryPantry.data.message.map((pantry: {
+                                            name: string;
+                                            id: string;
+                                        }) => {
                                             return <SelectItem key={pantry.id} value={pantry.id}>{pantry.name}</SelectItem>
                                         }) : null}
                                     </SelectContent>
@@ -149,7 +157,10 @@ export default function AddDeitFormPlan(props: {
                                         <SelectValue placeholder="select Delivary" />
                                     </SelectTrigger>
                                     <SelectContent>
-                                        {QueryDelivary.data ? QueryDelivary.data.data.map((delivary: any) => {
+                                        {QueryDelivary.data ? QueryDelivary.data.data.map((delivary: {
+                                            name: string;
+                                            id: string;
+                                        }) => {
                                             return <SelectItem key={delivary.id} value={delivary.id}>{delivary.name}</SelectItem>
                                         }) : null}
                                     </SelectContent>

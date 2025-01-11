@@ -41,7 +41,9 @@ export default function Home() {
     onSettled: (data) => {
       if (data.success) {
         localStorage.setItem("token", data.message)
-        const decode: any = jwtDecode(data.message)
+        const decode: {
+          role: string
+        } = jwtDecode(data.message)
         localStorage.setItem("role", decode.role)
         if (decode.role === "admin") {
           router.push("/manager")

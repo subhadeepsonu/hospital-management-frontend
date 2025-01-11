@@ -23,7 +23,20 @@ export default function Page() {
     return (
         <div className="h-screen w-full  flex justify-start items-start pt-20 px-4">
             <div className="grid grid-cols-4 gap-4 w-full">
-                {queryDelivary.data.data.map((delivary: any) => {
+                {queryDelivary.data.data.map((delivary: {
+                    id: number;
+                    mealType: string;
+                    time: string;
+                    instructions: string;
+                    ingredients: string;
+                    status: string;
+                    delivary: {
+                        name: string;
+                    }
+                    pantry: {
+                        name: string;
+                    }
+                }) => {
                     return <DelivaryDietCard key={delivary.id} Ingredients={delivary.ingredients} Instruction={delivary.instructions} delivary={delivary.delivary.name} id={delivary.id} pantry={delivary.pantry.name} status={delivary.status} time={delivary.mealType} />
                 })}
             </div>

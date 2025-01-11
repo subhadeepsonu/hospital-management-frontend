@@ -38,7 +38,14 @@ export default function Page() {
                 </SheetContent>
             </Sheet>
             <div className="grid grid-cols-4 gap-4 w-full h-full px-4">
-                {QueryPatients.data.data.map((patient: any) => {
+                {QueryPatients.data.data.map((patient: {
+                    age: number;
+                    bedNumber: number;
+                    floorNumber: number;
+                    name: string;
+                    roomNumber: number;
+                    id: number;
+                }) => {
                     return <PatientCard id={patient.id} age={patient.age} bed={patient.bedNumber} floor={patient.floorNumber} name={patient.name} room={patient.roomNumber} key={patient.id} />
                 })}
             </div>

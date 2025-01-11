@@ -53,7 +53,19 @@ export default function Page(params: {
 
         <h1 className="text-2xl font-bold">Diet Plan</h1>
         <div className="w-full grid grid-cols-4 gap-4">
-            {QueryPatient.data.data.dietCharts.map((diet: any) => {
+            {QueryPatient.data.data.dietCharts.map((diet: {
+                mealType: string;
+                ingredients: string;
+                instructions: string;
+                delivary: {
+                    name: string;
+                };
+                pantry: {
+                    name: string;
+                };
+                status: string;
+                id: string;
+            }) => {
                 return <DietCard time={diet.mealType} Ingredients={diet.ingredients} Instruction={diet.instructions} delivary={diet.delivary.name} pantry={diet.pantry.name} status={diet.status} key={diet.id} />
 
             })}

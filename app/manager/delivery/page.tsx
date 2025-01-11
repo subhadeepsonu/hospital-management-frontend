@@ -40,7 +40,11 @@ export default function Page() {
                 </SheetContent>
             </Sheet>
             <div className="grid grid-cols-4 gap-4 w-full h-full px-4">
-                {queryDelivary.data.data.map((delivary: any) => {
+                {queryDelivary.data.data.map((delivary: {
+                    contactInfo: string;
+                    name: string;
+                    id: string;
+                }) => {
                     return <DeliveryCard key={delivary.id} contact={delivary.contactInfo} name={delivary.name} />
                 })}
             </div>
